@@ -1,4 +1,4 @@
-import ButtonNewItems from "@/components/Settings/Buttons/ButtonNewItems";
+
 
 export default function NewUser() {
     return (
@@ -15,7 +15,6 @@ export default function NewUser() {
                 <div className="pb-4 font-bold">Пароль</div>
                 <textarea className="border w-full h-8 rounded-md">Введите пароль</textarea>
             </div>
-            <ButtonNewItems />
         </div>
     )
 }

@@ -49,7 +49,7 @@ const Article: React.FC<ArticleProps> = ({ articles, categories }) => {
             ))}
           </select>
         </div>
-        {NewButton(pathname)}
+        <NewButton address='/settings/articles/newarticle'/>
       </div>
       <div>
         {filteredArticles && filteredArticles.length > 0 ? (
