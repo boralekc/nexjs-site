@@ -26,3 +26,15 @@ export async function deleteCategory(formData: FormData) {
     }
     revalidatePath('/settings/category')
 }
+
+export const updateCategory = async (formData: FormData) => {
+    try {
+        const id_category = formData.get('id_category') as string
+        const name = formData.get('name') as string
+        const updateCategory = await categoryAPI.updateCategory({ id_category, name });
+        console.log(updateCategory)
+    } catch (error) {
+
+    }
+    revalidatePath('/settings/category')
+}

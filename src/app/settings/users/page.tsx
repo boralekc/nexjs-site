@@ -1,7 +1,5 @@
 import SettingsLayout from '@/layouts/SettingsLayout';
-import { UsersAPI } from '@/app/lib/services/UserServices';
-import Users from '@/app/ui/Users/User';
-import { categoryAPI } from '@/app/lib/services/CategoryServices';
+import Users from '@/app/ui/Users/UserList';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

@@ -25,6 +25,17 @@ export const categoryAPI = {
         return response.json(); // Возвращение данных ответа
     },
 
+    async updateCategory(category: ICategory) {
+        const response = await fetch(`${API_URL}category/${category.id_category}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(category) // Отправка тела запроса
+        });
+        return response.json(); // Возвращение данных ответа
+    },
+
     async deleteCategory(id_category: { id_category: string }) {
         const response = await fetch(`${API_URL}category/${id_category.id_category}`, {
             method: 'DELETE'

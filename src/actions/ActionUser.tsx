@@ -6,9 +6,11 @@ import { revalidatePath } from "next/cache";
 
 export const createUser = async (formData: FormData) => {
     try {
-        const username = formData.get('name') as string
-        const saveCategory = await usersAPI.addUser({ username });
-        console.log(saveCategory)
+        const username = formData.get('username') as string
+        const email = formData.get('email') as string
+        const password = formData.get('password') as string
+        const saveUser = await usersAPI.addUser({ username, email, password });
+        console.log(saveUser)
     } catch (error) {
 
     }
@@ -23,6 +25,20 @@ export async function deleteUser(formData: FormData) {
         
     } catch (error) {
         // Обработка ошибок при удалении категории
+    }
+    revalidatePath('/settings/users')
+}
+
+export const updateUser = async (formData: FormData) => {
+    try {
+        const user_id = formData.get('user_id') as string
+        const username = formData.get('username') as string
+        const email = formData.get('email') as string
+        const password = formData.get('password') as string
+        const updateUser = await usersAPI.updateUser({ user_id, username, email, password });
+        console.log(updateUser)
+    } catch (error) {
+
     }
     revalidatePath('/settings/users')
 }

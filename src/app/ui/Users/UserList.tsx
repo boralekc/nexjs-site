@@ -6,9 +6,9 @@ import ItemUser from './ItemUser';
 
 const Users = async () => {
   const users = await usersAPI.getUsers()
-  if (!users || users.length === 0) {
-    return <div>Нет данных о категориях.</div>;
-  }
+  // if (!users || users.length === 0) {
+  //   return <div>Нет данных о категориях.</div>;
+  // }
 
   return (
 

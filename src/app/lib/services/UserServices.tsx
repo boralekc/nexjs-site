@@ -28,6 +28,17 @@ export const usersAPI = {
         return response.json(); // Возвращение данных ответа
     },
 
+    async updateUser(users: IUser) {
+        const response = await fetch(`${API_URL}users/${users.user_id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(users) // Отправка тела запроса
+        });
+        return response.json(); // Возвращение данных ответа
+    },
+
     async deleteUser(user_id: { user_id: string }) {
         const response = await fetch(`${API_URL}users/${user_id.user_id}`, {
             method: 'DELETE'
