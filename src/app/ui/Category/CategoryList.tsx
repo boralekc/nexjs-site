@@ -1,6 +1,5 @@
 import { categoryAPI } from '@/app/lib/services/CategoryServices';
 import { ICategory } from '@/interfaces/ICategory';
-import Link from 'next/link';
 import React from 'react';
 import ItemCategory from './ItemCategory';
 import NewButton from '@/components/Settings/Buttons/NewButton';
