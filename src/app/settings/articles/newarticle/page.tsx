@@ -1,5 +1,5 @@
 import { categoryAPI } from "@/app/lib/services/CategoryServices";
-import NewArticle from "@/app/ui/Article/NewArticle"
+import SelectedNewArticle from "@/app/ui/Article/Selected/SelectedNewArticle";
 import SettingsLayout from "@/layouts/SettingsLayout"
 import { Metadata } from "next";
 
@@ -15,7 +15,7 @@ export default async function NewArticlePage () {
         <html lang='en'>
             <body>
                 <SettingsLayout>
-                    <NewArticle categories={categories} />
+                    <SelectedNewArticle categories={categories}/>
                 </SettingsLayout>
             </body>
         </html>

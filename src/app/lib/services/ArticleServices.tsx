@@ -26,21 +26,23 @@ export const articleAPI = {
         });
         return response.json(); // Возвращение данных ответа
     },
-    // async deleteArticle( article ) {
-    //     const response = await fetch(`articles/${article.id_article}`, {
-    //         method: 'DELETE',
-    //     });
-    //     return response.json(); // Возвращение данных ответа
-    // },
-    // async updateArticle( article ) {
-    //     const response = await fetch(`articles/${article.id_article}`, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify( article ) // Отправка тела запроса
-    //     });
-    //     return response.json(); // Возвращение данных ответа
-    // },
+
+    async updateArticle(article: IArticle) {
+        const response = await fetch(`${API_URL}category/${article.id_article}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(article) // Отправка тела запроса
+        });
+        return response.json(); // Возвращение данных ответа
+    },
+
+    async deleteArticle(id_article: { id_article: string }) {
+        const response = await fetch(`${API_URL}articles/${id_article.id_article}`, {
+            method: 'DELETE'
+        });
+        return response.json(); // Возвращение данных ответа
+    }
 };
 

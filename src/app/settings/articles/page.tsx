@@ -2,23 +2,24 @@ import Article from '@/app/ui/Article/Article';
 import SettingsLayout from '@/layouts/SettingsLayout';
 import { articleAPI } from '@/app/lib/services/ArticleServices';
 import { categoryAPI } from '@/app/lib/services/CategoryServices';
-import { IArticle } from '@/interfaces/IArticle';
-import { ICategory } from '@/interfaces/ICategory';
 import { Metadata } from 'next';
+import SelectedArticle from '@/app/ui/Article/Selected/SelectedArticle';
 
 export const metadata: Metadata = {
   title: 'Articles',
   description: '',
 }
 
-export default function ArticlePage() {
+export default async function ArticlePage() {
+  const articles = await articleAPI.getArticles();
+  const categories = await categoryAPI.getCategory();
    
   return (
     <html lang='en'>
       <body>
         <SettingsLayout>
-          {/* <div className='fixed left-72 h-lvh w-4/5 top-36 pt-4'> */}
-            <Article />
+          <SelectedArticle categories={categories} articles={articles} />
+            {/* <Article articles={articles} categories={categories}/> */}
         </SettingsLayout>
       </body>
     </html>

@@ -14,7 +14,6 @@ const CategoryList = async () => {
     <div>
       <div className='fixed flex left-72 top-20 w-3/4 border-b pb-4'>
         <NewButton address='/settings/category/newcategory' />
-
         <div className='fixed left-72 w-4/5 top-36 pt-4 overflow-auto h-screen'>
           {categories && categories.map((category: ICategory) => (
             <ItemCategory key={category.id_category} category={category} />

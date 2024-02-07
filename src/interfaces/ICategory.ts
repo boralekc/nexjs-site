@@ -1,6 +1,6 @@
 
 export interface ICategory {
-    id_category: number | string;
+    id_category?: number | string;
     name: string;
 }
 
