@@ -1,16 +1,16 @@
-import { revalidatePath } from "next/cache";
 import { ICategory } from "@/interfaces/ICategory";
 
 const API_URL = 'http://localhost:7000/api/';
 
 export const categoryAPI = {
+
     async getCategory() {
         const response = await fetch(`${API_URL}category`);
         return response.json();
     },
 
     async getOneCategory(id_category: ICategory) {
-        const response = await fetch(`${API_URL}category/${id_category}`)
+        const response = await fetch(`${API_URL}category/${id_category}`, { cache: 'no-store' })
         return response.json();
     },
 
@@ -42,6 +42,5 @@ export const categoryAPI = {
         });
         return response.json(); // Возвращение данных ответа
     }
-    
     
 };

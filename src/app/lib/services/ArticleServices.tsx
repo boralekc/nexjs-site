@@ -5,14 +5,12 @@ const API_URL = 'http://localhost:7000/api/';
 export const articleAPI = {
 
     async getArticles() {
-        const response = await fetch(`${API_URL}articles`, {
-            next: { revalidate: 5 }
-        });
+        const response = await fetch(`${API_URL}articles`);
         return response.json();
     },
 
     async getOneArticle(id_article: IArticle) {
-        const response = await fetch(`${API_URL}articles/${id_article}`)
+        const response = await fetch(`${API_URL}articles/${id_article}`, { cache: 'no-store' })
         return response.json();
     },
 
@@ -27,13 +25,13 @@ export const articleAPI = {
         return response.json(); // Возвращение данных ответа
     },
 
-    async updateArticle(article: IArticle) {
-        const response = await fetch(`${API_URL}category/${article.id_article}`, {
+    async updateArticle(articles: IArticle) {
+        const response = await fetch(`${API_URL}articles/${articles.id_article}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(article) // Отправка тела запроса
+            body: JSON.stringify(articles) // Отправка тела запроса
         });
         return response.json(); // Возвращение данных ответа
     },

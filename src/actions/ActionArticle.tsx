@@ -24,16 +24,18 @@ export async function deleteArticle(formData: FormData) {
         console.log(deleteArticle)
         
     } catch (error) {
-        // Обработка ошибок при удалении категории
     }
     revalidatePath('/settings/articles')
 }
 
 export const updateArticle = async (formData: FormData) => {
+    
     try {
         const id_article = formData.get('id_article') as string
-        const name = formData.get('name') as string
-        const updateArticle = await articleAPI.updateArticle({ id_category, title, content });
+        const id_category = formData.get('id_category') as string
+        const title = formData.get('title') as string
+        const content = formData.get('content') as string
+        const updateArticle = await articleAPI.updateArticle({ id_article, content, title, id_category });
         console.log(updateArticle)
     } catch (error) {
 

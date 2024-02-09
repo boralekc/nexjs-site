@@ -14,8 +14,8 @@ const ItemUser: React.FC<EditUsersProps> = ({ user }) => {
                 <p className='pt-2 pl-2 font-semibold mr-3 w-full'>
                     {user.username}
                 </p>
-                <EditButton itemId={user.user_id} address='/settings/users/edit/'/>
-                <DeleteUser user_id={user.user_id} />
+                <EditButton itemId={Number(user.user_id)} address='/settings/users/edit/'/>
+                <DeleteUser user_id={Number(user.user_id)} />
             </div>
         </div>
     );

@@ -34,6 +34,7 @@ export const usersAPI = {
             headers: {
                 'Content-Type': 'application/json'
             },
+            cache: 'no-store',
             body: JSON.stringify(users) // Отправка тела запроса
         });
         return response.json(); // Возвращение данных ответа

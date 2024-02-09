@@ -2,7 +2,7 @@ import { createArticle } from "@/actions/ActionArticle";
 import ButtonNewItems from "@/components/Settings/Buttons/ButtonNewItems";
 
 interface ItemArticleProps {
-    selectedCategory: string | null;
+    selectedCategory: number | null;
 }
 
 const NewArticleForm: React.FC<ItemArticleProps> = ({selectedCategory}) => {
@@ -15,10 +15,10 @@ const NewArticleForm: React.FC<ItemArticleProps> = ({selectedCategory}) => {
                     <textarea required name='title' className="border w-full rounded-md" placeholder='Введите название категории' />
                 </div>
                 <div className="mt-16 mx-6">
-                    <div className="pb-4 font-bold">{selectedCategory}Текст статьи</div>
+                    <div className="pb-4 font-bold">Текст статьи</div>
                     <textarea required name='content' className="border w-full rounded-md" placeholder='Введите название категории' />
                 </div>
-                <input type='hidden' required name='id_category' value={selectedCategory || ''} />
+                    <input type='hidden' required name='id_category' value={selectedCategory || ''} />
                 <div className="flex justify-end w-full pr-6 mt-6">
                     <ButtonNewItems address={'/settings/articles'} />
                 </div>

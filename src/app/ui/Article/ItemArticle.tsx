@@ -23,8 +23,8 @@ const ItemArticle: React.FC<ItemArticleProps> = ({ article, categories, selected
                 {article.title}
                 {category ? ` (${category.name})` : ''}
             </p>
-            <EditButton itemId={article.id_article} address='/settings/article/edit/' />
-            <DeleteArticle id_article={article.id_article} />
+            <EditButton itemId={Number(article.id_article)} address='/settings/articles/edit/' />
+            <DeleteArticle id_article={Number(article.id_article)} />
         </div>
     );
 };

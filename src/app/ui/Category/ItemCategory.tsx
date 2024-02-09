@@ -14,8 +14,8 @@ const ItemCategory: React.FC<EditCategoryProps> = ({ category }) => {
                 <p className='pt-2 pl-2 font-semibold mr-3 w-full'>
                     {category.name}
                 </p>
-                <EditButton itemId={category.id_category} address='/settings/category/edit/' />
-                <DeleteCategory id_category={category.id_category} />
+                <EditButton itemId={Number(category.id_category)} address='/settings/category/edit/' />
+                <DeleteCategory id_category={Number(category.id_category)} />
             </div>
         </div>
     );
