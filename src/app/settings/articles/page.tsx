@@ -19,7 +19,6 @@ export default async function ArticlePage() {
       <body>
         <SettingsLayout>
           <SelectedArticle categories={categories} articles={articles} />
-            {/* <Article articles={articles} categories={categories}/> */}
         </SettingsLayout>
       </body>
     </html>

@@ -19,10 +19,14 @@ const ItemArticle: React.FC<ItemArticleProps> = ({ article, categories, selected
 
     return (
         <div key={article.id_article} className='flex h-16 mt-4 bg-gray-100 rounded-xl shadow-lg p-2 mr-16 ml-auto'>
-            <p className='pt-2 pl-2 font-semibold mr-3 w-full'>
+            <div className='pt-2 pl-2 font-semibold mr-3 w-full'>
+            <div className='border-b'>
                 {article.title}
-                {category ? ` (${category.name})` : ''}
-            </p>
+            </div>
+            <div className='text-xs'>
+            Категория: {category ? `${category.name}` : 'Не прикреплен ни к одной категории'}
+            </div>
+            </div>
             <EditButton itemId={Number(article.id_article)} address='/settings/articles/edit/' />
             <DeleteArticle id_article={Number(article.id_article)} />
         </div>

@@ -17,7 +17,6 @@ const SelectedNewArticle: React.FC<SelectedNewArticleProps> = ({ categories }) =
 
     return (
         <div className='fixed flex left-72 top-20 w-3/4 border-b pb-4'>
-        <div className="flex">
           <p className="mr-4 font-bold pt-2.5">Выберите категорию:</p>
           <select className='border rounded-2xl pl-2 py-2 pr-24 h-10' value={selectedCategory || ""} onChange={handleSelectChange}>
             <option value={0}>Все</option>
@@ -27,7 +26,6 @@ const SelectedNewArticle: React.FC<SelectedNewArticleProps> = ({ categories }) =
               </option>
             ))}
           </select>
-        </div>
         <NewArticleForm selectedCategory={selectedCategory}/>
       </div>
     )
