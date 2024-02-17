@@ -1,6 +1,6 @@
 'use server'
 
-import { categoryAPI } from "@/app/lib/services/CategoryServices";
+import { categoryAPI } from "@/app/api/services/CategoryServices";
 import { revalidatePath } from "next/cache";
 
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { categoryAPI } from "@/app/lib/services/CategoryServices";
+import { categoryAPI } from "@/app/api/services/CategoryServices";
 import { ICategory } from "@/interfaces/ICategory";
 import { useState } from "react";
 

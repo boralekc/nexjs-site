@@ -1,4 +1,4 @@
-import { usersAPI } from '@/app/lib/services/UserServices';
+import { usersAPI } from '@/app/api/services/UserServices';
 import NewButton from '@/components/Settings/Buttons/NewButton';
 import { IUser } from '@/interfaces/IUser';
 import React from 'react';

@@ -1,5 +1,5 @@
-import { articleAPI } from "@/app/lib/services/ArticleServices";
-import { categoryAPI } from "@/app/lib/services/CategoryServices";
+import { articleAPI } from "@/app/api/services/ArticleServices";
+import { categoryAPI } from "@/app/api/services/CategoryServices";
 import ItemArticle from "@/app/ui/Article/ItemArticle";
 import { IArticle } from "@/interfaces/IArticle";
 import SettingsLayout from "@/layouts/SettingsLayout"

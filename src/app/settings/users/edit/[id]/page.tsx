@@ -1,5 +1,5 @@
-import { categoryAPI } from "@/app/lib/services/CategoryServices";
-import { usersAPI } from "@/app/lib/services/UserServices";
+import { categoryAPI } from "@/app/api/services/CategoryServices";
+import { usersAPI } from "@/app/api/services/UserServices";
 import EditCategory from "@/app/ui/Category/EditCategory";
 import EditUser from "@/app/ui/Users/EditUser";
 import { ICategory } from "@/interfaces/ICategory";

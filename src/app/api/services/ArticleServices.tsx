@@ -1,6 +1,6 @@
 import { IArticle } from '@/interfaces/IArticle'; // Убедитесь, что вы импортировали fetch
 
-const API_URL = 'http://localhost:7000/api/';
+const API_URL = 'http://localhost:4000/api/';
 
 export const articleAPI = {
 

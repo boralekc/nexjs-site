@@ -1,4 +1,4 @@
-import { categoryAPI } from '@/app/lib/services/CategoryServices';
+import { categoryAPI } from '@/app/api/services/CategoryServices';
 import { ICategory } from '@/interfaces/ICategory';
 import React from 'react';
 import ItemCategory from './ItemCategory';

@@ -1,6 +1,6 @@
 import { IUser } from '@/interfaces/IUser'
 
-const API_URL = 'http://localhost:7000/api/';
+const API_URL = 'http://localhost:4000/api/';
 
 export const usersAPI = {
     async getUsers() {

@@ -1,4 +1,4 @@
-import { categoryAPI } from "@/app/lib/services/CategoryServices"
+import { categoryAPI } from "@/app/api/services/CategoryServices"
 import NewCategoryForm from "@/app/ui/Category/NewCategory"
 import { IAddCategory, ICategory } from "@/interfaces/ICategory"
 import SettingsLayout from "@/layouts/SettingsLayout"

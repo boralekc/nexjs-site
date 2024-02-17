@@ -1,4 +1,4 @@
-import { categoryAPI } from "@/app/lib/services/CategoryServices";
+import { categoryAPI } from "@/app/api/services/CategoryServices";
 import SelectedNewArticle from "@/app/ui/Article/Selected/SelectedNewArticle";
 import SettingsLayout from "@/layouts/SettingsLayout"
 import { Metadata } from "next";

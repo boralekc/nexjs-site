@@ -1,6 +1,6 @@
 'use server'
 
-import { articleAPI } from "@/app/lib/services/ArticleServices";
+import { articleAPI } from "@/app/api/services/ArticleServices";
 import { revalidatePath } from "next/cache";
 
 

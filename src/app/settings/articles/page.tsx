@@ -1,7 +1,7 @@
 import Article from '@/app/ui/Article/Article';
 import SettingsLayout from '@/layouts/SettingsLayout';
-import { articleAPI } from '@/app/lib/services/ArticleServices';
-import { categoryAPI } from '@/app/lib/services/CategoryServices';
+import { articleAPI } from '@/app/api/services/ArticleServices';
+import { categoryAPI } from '@/app/api/services/CategoryServices';
 import { Metadata } from 'next';
 import SelectedArticle from '@/app/ui/Article/Selected/SelectedArticle';
 
