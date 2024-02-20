@@ -12,13 +12,19 @@ export const metadata: Metadata = {
 
 interface ItemArticleProps {
     params: {
-        id: IArticle;
+        id: number;
     }
 }
 
 export default async function EditArticlePage ({ params: { id } }: ItemArticleProps) {
-    const oneArticle = await articleAPI.getOneArticle(id)
+    const articleId = Number(id);
+    const oneArticle = await articleAPI.getOneArticle(articleId)
     const categories = await categoryAPI.getCategory()
+
+    if (!oneArticle) {
+        // Обработка случая, когда статья не найдена
+        return <div>Статья не найдена</div>;
+    }
 
     return (
         <html lang='en'>

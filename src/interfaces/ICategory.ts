@@ -1,13 +1,5 @@
 export interface ICategory {
-    id_category?: number | string;
+    id_category?: number;
     name: string;
-    articles: any[]
-}
-
-export interface ICategories {
-    categories: ICategory[]
-}
-
-export interface IAddCategory {
-    name: string;
+    articles?: any[]
 }

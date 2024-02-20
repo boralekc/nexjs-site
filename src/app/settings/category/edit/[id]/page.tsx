@@ -11,13 +11,18 @@ export const metadata: Metadata = {
 
 interface ItemCategoryProps {
     params: {
-        id: ICategory;
+        id: number;
     }
 }
 
 export default async function CategoryItemPage ({ params: { id } }: ItemCategoryProps) {
-    const category = await categoryAPI.getOneCategory(id)
-    
+    const categoryId = Number(id);
+    const category = await categoryAPI.getOneCategory(categoryId)
+
+    if (!category) {
+        // Обработка случая, когда статья не найдена
+        return <div>Статья не найдена</div>;
+    }
 
     return (
         <html lang='en'>

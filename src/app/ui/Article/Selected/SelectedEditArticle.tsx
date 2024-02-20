@@ -10,7 +10,7 @@ interface SelectedEditArticleProps {
 }
 
 const SelectedEditArticle: React.FC<SelectedEditArticleProps> = ({ oneArticle, categories }) => {
-  const [selectedCategoryId, setSelectedCategoryId] = useState<number | string | null>(oneArticle?.id_category || null);
+  const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(oneArticle?.id_category || null);
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedId = parseInt(event.target.value, 10);

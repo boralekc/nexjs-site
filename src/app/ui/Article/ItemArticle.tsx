@@ -5,7 +5,7 @@ import { ICategory } from "@/interfaces/ICategory";
 
 interface ItemArticleProps {
     article: IArticle;
-    categories?: ICategory,
+    categories: ICategory[],
     selectedCategory: number | null;
 }
 
@@ -15,7 +15,7 @@ const ItemArticle: React.FC<ItemArticleProps> = ({ article, categories, selected
         return null; // Если статья не соответствует выбранной категории, не отображаем ее
     }
 
-    // const category = categories.find(category => category.id_category === article.id_category);
+    const category = categories.find(category => category.id_category === article.id_category);
 
     return (
         <div key={article.id_article} className='flex h-16 mt-4 bg-gray-100 rounded-xl shadow-lg p-2 mr-16 ml-auto'>
@@ -24,7 +24,7 @@ const ItemArticle: React.FC<ItemArticleProps> = ({ article, categories, selected
                 {article.title}
             </div>
             <div className='text-xs'>
-            {/* Категория: {category ? `${category.name}` : 'Не прикреплен ни к одной категории'} */}
+            Категория: {category ? `${category.name}` : 'Не прикреплен ни к одной категории'}
             </div>
             </div>
             <EditButton itemId={Number(article.id_article)} address='/settings/articles/edit/' />
