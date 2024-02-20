@@ -36,7 +36,7 @@ export const articleAPI = {
         return response.json(); // Возвращение данных ответа
     },
 
-    async deleteArticle(id_article: { id_article: string }) {
+    async deleteArticle(id_article: { id_article: number }) {
         const response = await fetch(`${API_URL}articles/${id_article.id_article}`, {
             method: 'DELETE'
         });

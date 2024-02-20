@@ -1,4 +1,3 @@
-import Article from '@/app/ui/Article/Article';
 import SettingsLayout from '@/layouts/SettingsLayout';
 import { articleAPI } from '@/app/api/services/ArticleServices';
 import { categoryAPI } from '@/app/api/services/CategoryServices';

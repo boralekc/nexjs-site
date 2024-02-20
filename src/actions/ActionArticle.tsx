@@ -8,7 +8,7 @@ export const createArticle = async (formData: FormData) => {
     try {
         const title = formData.get('title') as string
         const content = formData.get('content') as string
-        const id_category = formData.get('id_category') as string
+        const id_category = Number(formData.get('id_category'));
         const saveArticle = await articleAPI.addArticle({ title, content, id_category });
         console.log(saveArticle)
     } catch (error) {
@@ -19,7 +19,7 @@ export const createArticle = async (formData: FormData) => {
 
 export async function deleteArticle(formData: FormData) {
     try {
-        const id_article = formData.get('id_article') as string; // Извлекаем идентификатор категории из formData
+        const id_article = Number(formData.get('id_article')); // Извлекаем идентификатор категории из formData
         const deleteArticle = await articleAPI.deleteArticle({ id_article }); // Отправляем запрос на удаление категории
         console.log(deleteArticle)
         
