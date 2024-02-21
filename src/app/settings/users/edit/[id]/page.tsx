@@ -19,8 +19,13 @@ interface ItemUserProps {
 }
 
 export default async function CategoryItemPage ({ params: { id } }: ItemUserProps) {
-    const user = await usersAPI.getOneUser(id)
-    
+    const userId = Number(id);
+    const user = await usersAPI.getOneUser(userId)
+
+    if (!user) {
+        // Обработка случая, когда статья не найдена
+        return <div>Статья не найдена</div>;
+    }
 
     return (
         <html lang='en'>

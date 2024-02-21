@@ -1,49 +1,61 @@
 import { IUser } from '@/interfaces/IUser'
+import { PrismaClient } from '@prisma/client';
 
-const API_URL = 'http://localhost:4000/api/';
+const prisma = new PrismaClient();
 
 export const usersAPI = {
     async getUsers() {
-        const response = await fetch(`${API_URL}users`, {
-        next: {
-            revalidate: 10
+        return prisma.user.findMany();
+    },
+
+    async getOneUser(user_id: number) {
+        return prisma.user.findUnique({
+            where: {
+                user_id
+            }
+        });
+    },
+
+    async addUser(users: Partial<IUser>) {
+        if (users.username === undefined || users.email === undefined || users.password === undefined ) {
+            throw new Error('Username, email and password must be provided');
         }
-    });
-        return response.json();
-    },
-
-    async getOneUser(user_id: IUser) {
-        const response = await fetch(`${API_URL}users/${user_id}`)
-        return response.json();
-    },
-
-    async addUser(users: IUser) {
-        const response = await fetch(`${API_URL}users/newuser`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
+    
+        return prisma.user.create({
+            data: {
+                username: users.username,
+                email: users.email,
+                password: users.password
             },
-            body: JSON.stringify(users) // Отправка тела запроса
         });
-        return response.json(); // Возвращение данных ответа
     },
 
-    async updateUser(users: IUser) {
-        const response = await fetch(`${API_URL}users/${users.user_id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            cache: 'no-store',
-            body: JSON.stringify(users) // Отправка тела запроса
-        });
-        return response.json(); // Возвращение данных ответа
-    },
+    async updateUser(user_id: number, users: Partial<IUser>) {
+        try {
+            const updatedUser = await prisma.user.update({
+                where: {
+                    user_id
+                },
+                data: {
+                    username: users.username,
+                    email: users.email,
+                    password: users.password
+                },
+            });
+    
+            return updatedUser;
+        } catch (error) {
+            // Обработка ошибок
+            console.error('Ошибка при обновлении статьи:', error);
+            throw error; // Если нужно передать ошибку дальше для обработки на уровне вызывающего кода
+        }
+    },  
 
-    async deleteUser(user_id: { user_id: string }) {
-        const response = await fetch(`${API_URL}users/${user_id.user_id}`, {
-            method: 'DELETE'
+    async deleteUser(user_id: number) {
+        return prisma.user.delete({
+            where: {
+                user_id
+            }
         });
-        return response.json(); // Возвращение данных ответа
     }
 };

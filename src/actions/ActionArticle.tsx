@@ -46,7 +46,7 @@ export const updateArticle = async (formData: FormData) => {
 
 
         // Передача обоих аргументов в функцию updateArticleDB
-        const updateArticleResult = await articleAPI.fetchArticle(id_article, articleData);
+        const updateArticleResult = await articleAPI.updateArticle(id_article, articleData);
         
         console.log(updateArticleResult);
     } catch (error) {
