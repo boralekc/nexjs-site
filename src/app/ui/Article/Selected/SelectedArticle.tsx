@@ -18,6 +18,10 @@ const SelectedArticle: React.FC<SelectedArticleprops> = ({categories, articles})
         setSelectedCategory(selectedId === 0 ? null : selectedId);
       };
 
+      if(!articles) {
+        return "Статья не найдена"
+    }  
+
     return (
         <div className='fixed flex left-72 top-20 w-3/4 border-b pb-4'>
           <p className="mr-4 font-bold pt-2.5">Выберите категорию:</p>

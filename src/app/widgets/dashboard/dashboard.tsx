@@ -1,9 +1,9 @@
 import Layout from "./_ui/layout"
 
-const AppHome = () => {
+const Dashboard = () => {
     return (
         <Layout />
     )
 }
 
-export default AppHome
+export default Dashboard

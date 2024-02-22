@@ -1,9 +1,9 @@
 import Layout from "./_ui/layout"
 
-const AppHome = () => {
+const SignInForm = () => {
     return (
         <Layout />
     )
 }
 
-export default AppHome
+export default SignInForm

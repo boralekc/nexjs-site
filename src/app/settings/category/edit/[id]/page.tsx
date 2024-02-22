@@ -21,7 +21,7 @@ export default async function CategoryItemPage ({ params: { id } }: ItemCategory
 
     if (!category) {
         // Обработка случая, когда статья не найдена
-        return <div>Статья не найдена</div>;
+        return <div>Категория не найдена</div>;
     }
 
     return (

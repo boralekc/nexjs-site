@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google';
 import { Metadata } from 'next';
+import Dashboard from '../widgets/dashboard/dashboard';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,6 +16,7 @@ export default function Layout({
 }) {
   return (
     <>
+    <Dashboard />
     {children}
 </>
   );

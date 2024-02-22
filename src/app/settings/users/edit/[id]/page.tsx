@@ -24,7 +24,7 @@ export default async function CategoryItemPage ({ params: { id } }: ItemUserProp
 
     if (!user) {
         // Обработка случая, когда статья не найдена
-        return <div>Статья не найдена</div>;
+        return <div>Пользователь не найден</div>;
     }
 
     return (
