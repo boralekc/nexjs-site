@@ -1,7 +1,6 @@
 'use server'
-
-import { categoryAPI } from "@/app/api/services/CategoryServices";
-import { ICategory } from "@/interfaces/ICategory";
+import { ICategory } from "@/entities/category/model/ICategory";
+import { categoryAPI } from "@/shared/api/services/CategoryServices";
 import { revalidatePath } from "next/cache";
 
 

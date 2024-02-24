@@ -1,7 +1,7 @@
 'use server'
 
-import { usersAPI } from "@/app/api/services/UserServices";
-import { IUser } from "@/interfaces/IUser";
+import { IUser } from "@/entities/user/model/IUser";
+import { usersAPI } from "@/shared/api/services/UserServices";
 import { revalidatePath } from "next/cache";
 
 

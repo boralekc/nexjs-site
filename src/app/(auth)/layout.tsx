@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google';
 import { Metadata } from 'next';
-import SignInForm from '../widgets/sign-in-form/sign-in-form';
+import SignInForm from '@/widgets/sign-in-form/sign-in-form';
+
 
 const inter = Inter({ subsets: ['latin'] });
 

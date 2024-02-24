@@ -1,7 +1,8 @@
-import { articleAPI } from '@/app/api/services/ArticleServices';
-import { categoryAPI } from '@/app/api/services/CategoryServices';
+import SelectedArticle from '@/features/selected/SelectedArticle';
+import { articleAPI } from '@/shared/api/services/ArticleServices';
+import { categoryAPI } from '@/shared/api/services/CategoryServices';
 import { Metadata } from 'next';
-import SelectedArticle from '@/app/ui/Article/Selected/SelectedArticle';
+
 
 export const metadata: Metadata = {
   title: 'Articles',
@@ -13,11 +14,7 @@ export default async function ArticlePage() {
   const categories = await categoryAPI.getCategory();
    
   return (
-    <html lang='en'>
-      <body>
-          <SelectedArticle categories={categories} articles={articles} />
-      </body>
-    </html>
+      <SelectedArticle categories={categories} articles={articles} />
   );
 }
 
